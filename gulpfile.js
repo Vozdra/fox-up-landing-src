@@ -21,13 +21,18 @@ function bsServer() {
 	}); 
   }
 
+  function html() {
+	return src('app/*.html')
+	  .pipe(browserSync.reload({ stream: true }))
+  }
+
 function css() {
 return src('app/sass/**/*.sass')
 	.pipe(sass())
 	.pipe(rename({basename: "style", suffix: '.min'}))
 	.pipe(autoprefixer({cascade: false}))
 	.pipe(minifyCSS())
-	.pipe(dest('dist/css'))
+	.pipe(dest('app/css'))
 	.pipe(browserSync.stream())
 }
 
@@ -41,7 +46,7 @@ function js() {
 	])
 	  .pipe(concat('script.min.js'))
 	  .pipe(uglify())
-	  .pipe(dest('dist/js'))
+	  .pipe(dest('app/js'))
 	  .pipe(browserSync.reload({ stream: true }))
 }
 
@@ -71,22 +76,22 @@ function moveJs() {
   .pipe(dest('dist/js'))
 }
 
-function html() {
+function moveHtml() {
   return src('app/*.html')
     .pipe(dest('dist/'))
 }
 
-function fonts() {
+function moveFonts() {
 	return src('app/fonts/**/*')
 	  .pipe(dest('dist/fonts'))
   }
 
 exports.js = js;
 exports.css = css;
-exports.html = html;
-exports.fonts = fonts;
+exports.moveHtml = moveHtml;
+exports.moveFonts = moveFonts;
 exports.remove = remove;
 exports.moveCss = moveCss;
 exports.moveJs = moveJs;
-exports.build = series(remove, html, css, js, fonts, moveCss, moveJs, imgMin);
+exports.build = series(remove, moveHtml, moveCss, moveJs, moveFonts, imgMin);
 exports.default = parallel(bsServer, css, js, watching);
