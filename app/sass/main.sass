@@ -1,0 +1,493 @@
+@import "basic"
+@import "fonts"
+@import "libs"
+
+/* S-SERVICES */
+.s-services
+	i
+		font-size: 48px
+		color: $yel
+		transition: ease .2s
+	p
+		font-size: 20px
+		margin-top: 20px
+		margin-bottom: 10px
+		text-align: center
+		&::after
+			content: ''
+			position: absolute
+			left: 20%
+			bottom: 0
+			width: 60%
+			height: 2px
+			background-color: $yel
+			transform: scale(0)
+			transition: ease .2s
+	.serv-item
+		display: flex
+		flex-direction: column
+		align-items: center
+		margin:
+			top: 15px
+			bottom: 15px
+		&:hover
+			i
+				color: $gr
+				transition: ease .2s
+			p
+				&::after
+					transform: scale(1)
+					transition: ease .2s
+		i.fa-question-circle
+			font-size: 20px
+			color: lighten($gr, 50%)
+			transition: ease .2s
+			z-index: 0
+			&:hover
+				color: lighten($gr, 40%)
+		&-more-info
+			z-index: 1
+			span
+				position: absolute
+				left: 0
+				top: 0
+				min-height: 100%
+				height: auto
+				font-size: 14px
+				padding: 15px 50px
+				margin: 0
+				text-align: center
+				border-radius: 10px
+				box-shadow: -2px -2px 10px $gr
+				background-color: $gr
+				line-height: 1.5
+				color: #fff
+				i.fa-times-circle
+					position: absolute
+					font-size: 18px
+					left: 10px
+					top: 10px
+					font-weight: bold
+					border-radius: 10px
+					color: rgba(255,255,255, .9)
+					z-index: 2
+					&:hover
+						color: rgba(255,255,255, 1)
+
+/* S-MY-WORK */
+.s-my-work
+	.h3
+		color: #fff
+		span:nth-child(1)
+			color: $yel
+	&-items
+		position: relative
+		width: 100%
+		min-height: 350px
+		border-radius: 4px
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center
+		transition: ease .3s
+		&-inner
+			opacity: 0
+			color: #814f2c
+			transition: ease .3s
+			&-clouse
+				position: absolute
+				top: 7px
+				right: 25px
+				color: #814f2c
+				font-weight: bold
+				z-index: 2
+				&:hover
+					cursor: pointer
+			&-gotosite
+				position: absolute
+				top: 90%
+				left: 25px
+				font-weight: bold
+				z-index: 2
+				a
+					color: #814f2c
+			img
+				position: absolute
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0
+				background-color: $orang_br
+				border-radius: 4px
+			p
+				position: absolute
+				top: 20%
+				left: 10%
+				right: 10%
+				font-size: 12px
+				span
+					font-weight: normal
+					text-decoration: underline
+					font-size: 14px
+				strong
+					font-size: 16px
+					font-weight: bold
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			min-height: 350px
+			background-color: rgba(86, 92, 108, .1)
+			transition: ease .2s
+		&:hover
+			&::before
+				background-color: rgba(86, 92, 108, 0)
+				transition: ease .2s
+	&-btn
+		display: flex
+		justify-content: space-between
+		align-items: center
+		width: 100%
+		padding-top: 10px
+		padding-bottom: 15px
+		&-angle-right
+			display: flex
+			justify-content: center
+			width: 50%
+			i
+				color: $orang_l
+				margin-right: 5px
+		&-button
+			display: flex
+			justify-content: center
+			width: 50%
+			button
+				border: 2px solid #fff
+				border-radius: 4px
+				background-color: $gr
+				color: #fff
+				font-size: 18px
+				padding: 5px 25px
+				transition: ease .2s
+				&:hover
+					background-color: $yel
+					transition: ease .2s
+
+/* S-ABOUT-ME */
+.s-about-me
+	.wrap-foto
+		width: 250px
+		height: 250px
+		background-color: $bl
+		transform: rotate(3deg)
+		padding: 25px
+		margin: 0 auto
+		.my-foto
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			padding: 10px
+			background-color: #fff
+			border: 1px solid $bl
+			transform: rotate(-10deg)
+			#my-foto
+				width: 100%
+	.wrap-text
+		padding: 20px 25px
+		background-color: darken($yel, 2%)
+		color: #fff
+		border-radius: 4px
+		box-shadow: -25px -15px 0 lighten($yel, 40%)
+		h4
+			font-size: 24px
+
+/* S-CERTIFICATES */
+.s-certificates
+	background-color: $bl
+	padding-top: 0
+	padding-bottom: 50px
+	border-top: 2px solid $yel
+	.certific-owl
+		.certific-owl-item
+			display: flex
+			align-items: center
+			margin: 0 1px
+			border-right: 1px solid $bl
+			border-left: 1px solid $bl
+			background-color: #fff
+			.wrap-certific
+				max-width: 100%
+				padding: 10px
+				.img-sertificate
+					position: relative
+					max-width: 100%
+		.owl-nav
+			display: flex
+			color: $yel
+			opacity: .9
+			transform: ease .2s
+			&:hover
+				opacity: 1
+				transform: ease .2s
+			.owl-prev, .owl-next
+				font-size: 25px
+				border-radius: 100%
+			.owl-next
+				position: absolute
+				right: 0
+		.owl-dots
+			width: 100%
+			text-align: center
+			.owl-dot
+				position: relative
+				width: 12px
+				height: 12px
+				display: inline-block
+				margin: 7px
+				opacity: 0.6
+				&::before
+					content: '\f19d'
+					font-family: FontAwesome
+					position: absolute
+					width: 12px
+					height: 12px
+					color: $yel
+					top: 0
+					left: 0
+				&.active
+					transform: scale(1.2)
+					opacity: 1
+
+/* S-CALLBACK */
+.s-callback
+	.show_onsubmit
+		text-align: center
+		h3
+			color: green
+	.h3
+		color: $orang_br
+		margin-bottom: 1px
+	p
+		text-align: center
+		color: lighten($gr, 30%)
+	.h4
+		text-align: center
+		margin-top: 50px
+		font-size: 28px
+		font-weight: bold
+		color: $gr
+	.callback-form
+		margin-top: 15px
+		&-item
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			.type-p-wrap
+				display: flex
+				flex-direction: column
+				justify-content: flex-start
+				input
+					width: 2px
+				&-item
+					align-self: flex-start
+			input, select
+				width: 250px
+				min-width: 180px
+				max-width: 100%
+				background-color: $gr
+				color: #fff
+				padding: 6px 10px
+				margin: 2px
+				line-height: 1.5
+				border: none
+				border-bottom: 2px solid lighten($yel, 30%)
+				border-radius: 4px
+				transition: ease .2s
+			input
+				&:focus,
+					border-bottom: 2px solid $yel
+					transition: ease .2s
+					&:required
+						border-bottom: 2px solid $yel
+						transition: ease .2s
+			select
+				padding: 7.5px 10px
+				color: rgba(255, 255, 255, .5)
+				outline: none
+				option
+					padding: 5px 10px
+					border: none
+					padding: 0
+					margin: 0
+					&:hover
+						background-color: $yel
+			span
+				line-height: 1.2
+				font-size: 14px
+				padding: 0 19px
+				color: $gr
+			.callback-btn
+				margin-top: 35px
+				padding: 10px 25px
+				font-size: 20px
+				font-weight: bold
+				color: #fff
+				background-color: $yel
+				box-shadow: 0px 0px 15px 1px lighten($gr, 35%)
+				border: none
+				border-radius: 5px
+				text-transform: uppercase
+				transition: ease .2s
+				&:hover
+					box-shadow: 0px 0px 15px 1px lighten($gr, 25%)
+					transition: ease .2s
+			.option
+				animation-iteration-count: infinite
+		.callback-form-item-type-pr
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			p
+				font-size: 24px
+				font-weight: bold
+				margin-top: 15px
+				margin-bottom: 10px
+				color: $gr
+			.type-pr-wrap
+				margin-bottom: 17px
+				font-size: 20px
+				color: $gr
+
+/* S-PARTNERS */
+.s-partners
+	padding: 50px 0
+	border-top: 1px solid $gr
+	.img-partners
+		margin: 0 auto
+		padding: 10px 0
+
+/* MY-FOOTER */
+.my-footer
+	color: #fff
+	background-color: #364159
+	padding-top: 50px
+	.my-footer-items
+		.show_onsubmit_footer
+			text-align: center
+			h3
+				color: $yel
+			h4
+				font-weight: 300
+		padding: 25px
+		.h4
+			font-size: 22px
+			span
+				color: $yel
+		p
+			margin: 0
+			a
+				display: block
+				color: #e1e1e1
+				&:hover
+					color: #fff
+		.footer-callback
+			input
+				display: block
+				width: 70%
+				border-radius: 5px
+				color: #fff
+				background-color: transparent
+				border: none
+				caret-color: #fff
+				border-bottom: 1px solid #fff
+				padding-left: 5px
+				margin-bottom: 5px
+			.footer-callback-btn
+				width: 70%
+				margin-top: 15px
+				border-radius: 5px
+				background-color: #fff
+				color: $bl
+				text-transform: uppercase
+				font-weight: bold
+				padding: 7px 0
+				border: none
+				border-bottom: 3px solid $orang_l
+				transition: ease .1s
+				&:hover
+					border-bottom: 3px solid $orang_br
+					transition: ease .1s
+		&-phone, &-mail, &-fb, &-tg
+			i
+				font-family: FontAwesome
+				margin-right: 6px
+			a
+				text-decoration: none
+				transition: ease .2s
+				&:hover
+					i
+						color: $yel
+						transition: ease .2s
+		&-phone
+			a
+				font-size: 18px
+				span
+					color: #8f5db7
+		&-mail
+			a
+				margin-top: 15px
+		&-fb
+	.our-working
+		line-height: 1.1
+		text-align: right
+		padding-right: 50px
+	.footer-copyright
+		display: flex
+		justify-content: space-between
+		background-color: $bl
+		padding: 15px 25px
+		p
+			opacity: .4
+			margin: 0 50px
+		.nav-menu-footer
+			ul
+				display: flex
+				justify-content: center
+				list-style: none
+				padding: 0
+				margin: 0 50px
+				li
+					a
+						padding: 5px
+						color: #fff
+						opacity: .4
+						font-weight: 300
+
+
+/* BUTTON UP */
+.top
+	position: fixed
+	bottom: 20px
+	right: -100px
+	width: 40px
+	height: 40px
+	line-height: 40px
+	background-color: rgba($orang_br, .8)
+	border-radius: 5px
+	text-align: center
+	transition: ease .2s
+	&:hover
+		background-color: rgba($orang_br, 1)
+		transition: ease .2s
+	&.active
+		right: 20px
+	i
+		font-size: 24px
+		color: #fff
+
+
+@import "media" // Always at the end
